@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="shortcut icon" href="./favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Explore better completive programming tools and resources designed with user experience in mind."
+    />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <meta
+      name="keywords"
+      content="programming,algorithm,tools,编程,算法,程序设计,工具"
+    />
+    <link rel="canonical" href="https://algoux.org/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="algoUX" />
+    <meta
+      property="og:title"
+      content="algoUX - Where Algorithms Meet UX"
+    />
+    <meta
+      property="og:description"
+      content="Explore better completive programming tools and resources designed with user experience in mind."
+    />
+    <meta property="og:url" content="https://algoux.org/" />
+    <meta name="twitter:card" content="summary" />
+    <meta
+      name="twitter:title"
+      content="algoUX - Where Algorithms Meet UX"
+    />
+    <meta
+      name="twitter:description"
+      content="Explore better completive programming tools and resources designed with user experience in mind."
+    />
+    <meta name="color-scheme" content="dark light" />
+    <meta name="darkreader-lock" />
+    <title>algoUX - Where Algorithms Meet UX</title>
+    <style>
+      body {
+        margin: 0;
+        background-color: #f7fbfd;
+      }
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #05070b;
+        }
+      }
+    </style>
+    <script>
+      var systemThemeMediaQuery = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      );
+      var applySystemTheme = function () {
+        document.documentElement.classList.toggle(
+          "dark",
+          systemThemeMediaQuery.matches
+        );
+        document.documentElement.classList.toggle(
+          "light",
+          !systemThemeMediaQuery.matches
+        );
+      };
+      applySystemTheme();
+      if (systemThemeMediaQuery.addEventListener) {
+        systemThemeMediaQuery.addEventListener("change", applySystemTheme);
+      } else if (systemThemeMediaQuery.addListener) {
+        systemThemeMediaQuery.addListener(applySystemTheme);
+      }
+    </script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Organization",
+            "@id": "https://algoux.org/#organization",
+            "name": "algoUX",
+            "url": "https://algoux.org/",
+            "logo": "https://algoux.org/favicon.svg",
+            "sameAs": ["https://github.com/algoux"]
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://algoux.org/#website",
+            "url": "https://algoux.org/",
+            "name": "algoUX",
+            "description": "Where Algorithms Meet UX.",
+            "publisher": {
+              "@id": "https://algoux.org/#organization"
+            }
+          },
+          {
+            "@type": "ItemList",
+            "@id": "https://algoux.org/#products",
+            "name": "algoUX products",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "item": {
+                  "@type": "WebApplication",
+                  "name": "Algo Bootstrap",
+                  "url": "https://ab.algoux.cn/",
+                  "description": "现代的编程环境配置器",
+                  "applicationCategory": "DeveloperApplication",
+                  "operatingSystem": "Web"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "item": {
+                  "@type": "WebApplication",
+                  "name": "RankLand",
+                  "url": "https://rl.algoux.cn/",
+                  "description": "历年比赛榜单合集与海量数据库",
+                  "applicationCategory": "ReferenceApplication",
+                  "operatingSystem": "Web"
+                }
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "item": {
+                  "@type": "WebApplication",
+                  "name": "paste.then.ac",
+                  "url": "https://paste.then.ac/",
+                  "description": "轻量、快速的云端代码剪贴板",
+                  "applicationCategory": "DeveloperApplication",
+                  "operatingSystem": "Web"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    </script>
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-H3RV5QCLZH"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H3RV5QCLZH");
+    </script>
+  </head>
+  <body>
+    <!--[if IE]>
+      <p>
+        You are using an <strong>outdated</strong> browser. Please
+        <a
+          href="http://browsehappy.com/"
+          target="_blank"
+          rel="noreferrer noopener"
+          >upgrade your browser</a
+        >
+        to improve your experience.
+      </p>
+    <![endif]-->
+    <script>
+      const __darkReaderInjected = document.head.querySelector(".darkreader");
+      __darkReaderInjected && __darkReaderInjected.remove();
+    </script>
+    <div id="app" class="site-shell">
+      <div class="site-ambient" aria-hidden="true">
+        <div class="aurora-layer aurora-layer-a"></div>
+        <div class="aurora-layer aurora-layer-b"></div>
+        <div class="aurora-layer aurora-layer-c"></div>
+      </div>
+
+      <header class="site-header" aria-label="Site header">
+        <a class="brand-link" href="/" aria-label="algoUX home">
+          <img class="brand-mark" src="./src/assets/algoUX.svg" alt="" />
+          <span class="brand-wordmark-wrap" aria-hidden="true">
+            <img
+              class="brand-wordmark brand-wordmark-light"
+              src="./src/assets/algoUX-text-light.svg"
+              alt=""
+            />
+            <img
+              class="brand-wordmark brand-wordmark-dark"
+              src="./src/assets/algoUX-text-dark.svg"
+              alt=""
+            />
+          </span>
+        </a>
+
+        <nav class="site-nav" aria-label="Primary navigation">
+          <a
+            class="nav-link"
+            href="https://github.com/algoux"
+            target="_blank"
+            rel="noreferrer noopener"
+            >GitHub</a
+          >
+          <button
+            class="nav-link contact-link"
+            type="button"
+            data-contact-action
+            aria-label="Contact us"
+          >
+            <span>Contact us</span>
+          </button>
+        </nav>
+      </header>
+
+      <main class="site-main">
+        <section class="hero-section" aria-labelledby="hero-title">
+          <div class="hero-logo" aria-hidden="true">
+            <img class="hero-mark" src="./src/assets/algoUX.svg" alt="" />
+            <span class="hero-wordmark-wrap">
+              <img
+                class="hero-wordmark hero-wordmark-light"
+                src="./src/assets/algoUX-text-light.svg"
+                alt=""
+              />
+              <img
+                class="hero-wordmark hero-wordmark-dark"
+                src="./src/assets/algoUX-text-dark.svg"
+                alt=""
+              />
+            </span>
+          </div>
+          <h1 id="hero-title" class="sr-only">algoUX</h1>
+          <p class="hero-tagline">Where Algorithms Meet UX</p>
+        </section>
+
+        <section class="products-section" aria-labelledby="products-title">
+          <div class="section-heading">
+            <h2 id="products-title">Our Products</h2>
+          </div>
+
+          <div class="product-grid" data-product-grid>
+            <a
+              class="product-card"
+              data-product-card
+              href="https://ab.algoux.cn/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span class="product-card-glow" aria-hidden="true"></span>
+              <span class="product-icon-frame product-icon-frame-ab">
+                <img
+                  class="product-card-icon"
+                  src="./src/assets/algo-bootstrap-logo.png"
+                  alt="Algo Bootstrap logo"
+                />
+              </span>
+              <span class="product-card-intro">
+                <span class="product-card-name">Algo Bootstrap</span>
+                <span class="product-card-desc">现代的编程环境配置器</span>
+              </span>
+              <svg
+                class="product-card-arrow"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="product-card"
+              data-product-card
+              href="https://rl.algoux.cn/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span class="product-card-glow" aria-hidden="true"></span>
+              <span class="product-icon-frame product-icon-frame-rankland">
+                <img
+                  class="product-card-icon"
+                  src="./src/assets/rankland-logo.png"
+                  alt="RankLand logo"
+                />
+              </span>
+              <span class="product-card-intro">
+                <span class="product-card-name">RankLand</span>
+                <span class="product-card-desc">历年比赛榜单合集与海量数据库</span>
+              </span>
+              <svg
+                class="product-card-arrow"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+
+            <a
+              class="product-card"
+              data-product-card
+              href="https://paste.then.ac/"
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <span class="product-card-glow" aria-hidden="true"></span>
+              <span class="product-icon-frame product-icon-frame-paste">
+                <img
+                  class="product-card-icon"
+                  src="./src/assets/paste-then-ac-logo.png"
+                  alt="Paste then AC logo"
+                />
+              </span>
+              <span class="product-card-intro">
+                <span class="product-card-name">paste.then.ac</span>
+                <span class="product-card-desc">轻量、快速的云端代码剪贴板</span>
+              </span>
+              <svg
+                class="product-card-arrow"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  d="M7 17L17 7M9 7h8v8"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>© 2019-present algoUX. All Rights Reserved.</p>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>
