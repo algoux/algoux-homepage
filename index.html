@@ -4,46 +4,91 @@
     <meta charset="UTF-8" />
     <link rel="shortcut icon" href="./favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#31c2d7" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, viewport-fit=cover"
+    />
     <meta
       name="description"
-      content="Explore better completive programming tools and resources designed with user experience in mind."
+      content="Explore better competitive programming tools and resources designed with user experience in mind."
     />
+    <meta name="author" content="algoUX" />
+    <meta name="creator" content="algoUX" />
     <meta name="robots" content="index, follow, max-image-preview:large" />
     <meta
       name="keywords"
       content="programming,algorithm,tools,编程,算法,程序设计,工具"
     />
+    <meta name="format-detection" content="telephone=no" />
     <link rel="canonical" href="https://algoux.org/" />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="algoUX" />
+    <meta name="application-name" content="algoUX" />
+    <meta name="apple-mobile-web-app-title" content="algoUX" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta
-      property="og:title"
-      content="algoUX - Where Algorithms Meet UX"
+      name="apple-mobile-web-app-status-bar-style"
+      content="black-translucent"
     />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="msapplication-TileColor" content="#05070b" />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: light)"
+      content="#eefaff"
+    />
+    <meta
+      name="theme-color"
+      media="(prefers-color-scheme: dark)"
+      content="#12384f"
+    />
+    <meta name="theme-color" content="#eefaff" data-theme-color />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="zh_CN" />
+    <meta property="og:site_name" content="algoUX" />
+    <meta property="og:title" content="algoUX - Where Algorithms Meet UX" />
     <meta
       property="og:description"
-      content="Explore better completive programming tools and resources designed with user experience in mind."
+      content="Explore better competitive programming tools and resources designed with user experience in mind."
     />
     <meta property="og:url" content="https://algoux.org/" />
-    <meta name="twitter:card" content="summary" />
+    <meta property="og:image" content="https://algoux.org/og-image.png" />
     <meta
-      name="twitter:title"
-      content="algoUX - Where Algorithms Meet UX"
+      property="og:image:secure_url"
+      content="https://algoux.org/og-image.png"
     />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="algoUX - Where Algorithms Meet UX" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="algoUX - Where Algorithms Meet UX" />
     <meta
       name="twitter:description"
-      content="Explore better completive programming tools and resources designed with user experience in mind."
+      content="Explore better competitive programming tools and resources designed with user experience in mind."
+    />
+    <meta name="twitter:image" content="https://algoux.org/og-image.png" />
+    <meta
+      name="twitter:image:alt"
+      content="algoUX - Where Algorithms Meet UX"
     />
     <meta name="color-scheme" content="dark light" />
     <meta name="darkreader-lock" />
     <title>algoUX - Where Algorithms Meet UX</title>
     <style>
+      html {
+        background-color: #eefaff;
+      }
       body {
         margin: 0;
         background-color: #f7fbfd;
       }
       @media (prefers-color-scheme: dark) {
+        html {
+          background-color: #12384f;
+        }
         body {
           background-color: #05070b;
         }
@@ -52,6 +97,13 @@
     <script>
       var systemThemeMediaQuery = window.matchMedia(
         "(prefers-color-scheme: dark)"
+      );
+      var themeColors = {
+        light: "#eefaff",
+        dark: "#12384f",
+      };
+      var themeColorMeta = document.head.querySelector(
+        'meta[name="theme-color"][data-theme-color]'
       );
       var applySystemTheme = function () {
         document.documentElement.classList.toggle(
@@ -62,6 +114,12 @@
           "light",
           !systemThemeMediaQuery.matches
         );
+        if (themeColorMeta) {
+          themeColorMeta.setAttribute(
+            "content",
+            systemThemeMediaQuery.matches ? themeColors.dark : themeColors.light
+          );
+        }
       };
       applySystemTheme();
       if (systemThemeMediaQuery.addEventListener) {
@@ -79,7 +137,7 @@
             "@id": "https://algoux.org/#organization",
             "name": "algoUX",
             "url": "https://algoux.org/",
-            "logo": "https://algoux.org/favicon.svg",
+            "logo": "https://algoux.org/icon-512.png",
             "sameAs": ["https://github.com/algoux"]
           },
           {
@@ -87,7 +145,9 @@
             "@id": "https://algoux.org/#website",
             "url": "https://algoux.org/",
             "name": "algoUX",
-            "description": "Where Algorithms Meet UX.",
+            "description": "Explore better competitive programming tools and resources designed with user experience in mind.",
+            "inLanguage": "zh-Hans",
+            "image": "https://algoux.org/og-image.png",
             "publisher": {
               "@id": "https://algoux.org/#organization"
             }
