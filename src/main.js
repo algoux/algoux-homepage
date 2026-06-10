@@ -1,6 +1,7 @@
 import './tailwind.css';
 import './index.less';
 
+const googleAnalyticsId = __GOOGLE_ANALYTICS_ID__.trim();
 const productGrid = document.querySelector('[data-product-grid]');
 const productCards = productGrid
   ? Array.from(productGrid.querySelectorAll('[data-product-card]'))
@@ -11,6 +12,27 @@ const desktopPointerQuery = window.matchMedia(
 );
 
 const clamp = (value, min, max) => Math.min(Math.max(value, min), max);
+
+const setupGoogleAnalytics = () => {
+  if (!googleAnalyticsId) {
+    return;
+  }
+
+  window.dataLayer = window.dataLayer || [];
+  window.gtag = function gtag() {
+    window.dataLayer.push(arguments);
+  };
+
+  const script = document.createElement('script');
+  script.async = true;
+  script.src = `https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(
+    googleAnalyticsId
+  )}`;
+  document.head.append(script);
+
+  window.gtag('js', new Date());
+  window.gtag('config', googleAnalyticsId);
+};
 
 const updateProductLighting = (event) => {
   productCards.forEach((card) => {
@@ -77,3 +99,5 @@ if (contactAction) {
     window.location.href = `${protocol}:${local}@${domain}`;
   });
 }
+
+setupGoogleAnalytics();

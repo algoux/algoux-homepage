@@ -23,3 +23,5 @@ pnpm run dev
 ```bash
 pnpm run build
 ```
+
+Set `GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX` or `VITE_GOOGLE_ANALYTICS_ID=G-XXXXXXXXXX` to enable Google Analytics during dev/build.
