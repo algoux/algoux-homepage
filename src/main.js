@@ -2,11 +2,13 @@ import './tailwind.css';
 import './index.less';
 
 const googleAnalyticsId = __GOOGLE_ANALYTICS_ID__.trim();
+const beian = __BEIAN__.trim();
 const productGrid = document.querySelector('[data-product-grid]');
 const productCards = productGrid
   ? Array.from(productGrid.querySelectorAll('[data-product-card]'))
   : [];
 const contactAction = document.querySelector('[data-contact-action]');
+const beianLine = document.querySelector('[data-beian]');
 const desktopPointerQuery = window.matchMedia(
   '(hover: hover) and (pointer: fine) and (min-width: 901px)'
 );
@@ -32,6 +34,21 @@ const setupGoogleAnalytics = () => {
 
   window.gtag('js', new Date());
   window.gtag('config', googleAnalyticsId);
+};
+
+const setupBeian = () => {
+  if (!beian || !beianLine) {
+    return;
+  }
+
+  const link = beianLine.querySelector('a');
+
+  if (!link) {
+    return;
+  }
+
+  link.textContent = beian;
+  beianLine.hidden = false;
 };
 
 const updateProductLighting = (event) => {
@@ -100,4 +117,5 @@ if (contactAction) {
   });
 }
 
+setupBeian();
 setupGoogleAnalytics();

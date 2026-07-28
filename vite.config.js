@@ -7,10 +7,12 @@ module.exports = defineConfig(({ mode }) => {
     env.VITE_GOOGLE_ANALYTICS_ID ||
     ''
   ).trim();
+  const beian = (env.BEIAN || '').trim();
 
   return {
     define: {
       __GOOGLE_ANALYTICS_ID__: JSON.stringify(googleAnalyticsId),
+      __BEIAN__: JSON.stringify(beian),
     },
   };
 });
